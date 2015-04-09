@@ -1,5 +1,6 @@
 ifneq ($(KERNELRELEASE),)
-	obj-m	:=mymodule.o
+	obj-m	:=mymodulename.o
+	mymodulename-objs	:=module_exit.o  module_init.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
