@@ -21,3 +21,6 @@ module_init(my_symbol_export_init);
 module_exit(my_symbol_export_exit);
 
 MODULE_LICENSE("GPL");
+MODULE_AUTHOR("zhangly");
+MODULE_VERSION("2.6.30");
+MODULE_ALIAS("test_macro_for_kernel");
