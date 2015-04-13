@@ -1,6 +1,6 @@
 #include <linux/init.h>
 #include <linux/module.h>
-#include <linux/param.h>
+#include <linux/moduleparam.h>
 #include <linux/sched.h>
 
 static int num = 0;
