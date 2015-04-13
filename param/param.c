@@ -1,6 +1,7 @@
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/param.h>
+#include <linux/sched.h>
 
 static int num = 0;
 static char *p[10] = {NULL};
@@ -10,6 +11,8 @@ module_param_array(p, charp, &num, S_IRUGO);
 static int __init param_init(void)
 {
 	int i;
+	printk(KERN_ALERT "current->pid:%d,current->comm:%s",
+			current->pid, current->comm);
 	for (i = 0; num > i; i++)
 		printk(KERN_ALERT "p[%d]:%s\n",
 				i, p[i]);
