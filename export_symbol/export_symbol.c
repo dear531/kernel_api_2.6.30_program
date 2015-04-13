@@ -13,7 +13,7 @@ static int __init my_symbol_export_init(void)
 	symbol_export_print();
 	return 0;
 }
-static void __init my_symbol_export_exit(void)
+static void __exit my_symbol_export_exit(void)
 {
 	printk(KERN_ALERT "my_symbol_export_exit\n");
 }
