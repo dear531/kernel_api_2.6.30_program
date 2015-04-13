@@ -7,13 +7,13 @@ static void symbol_export_print(void)
 }
 EXPORT_SYMBOL(symbol_export_print);
 
-static int my_symbol_export_init(void)
+static int __init my_symbol_export_init(void)
 {
 	printk(KERN_ALERT "my_symbol_export_init\n");
 	symbol_export_print();
 	return 0;
 }
-static void my_symbol_export_exit(void)
+static void __init my_symbol_export_exit(void)
 {
 	printk(KERN_ALERT "my_symbol_export_exit\n");
 }
