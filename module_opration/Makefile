@@ -1,5 +1,6 @@
 ifneq ($(KERNELRELEASE),)
-	obj-m	:=modules_address.o module_ref_addr.o module_text_address.o
+	obj-m	:=modules_address.o module_ref_addr.o module_text_address.o \
+		  print_symbol.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
