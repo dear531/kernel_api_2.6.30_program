@@ -1,2 +1,3 @@
 .tmp_versions
 *.tmp_versions
+*.c.swp
