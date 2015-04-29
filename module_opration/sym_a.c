@@ -1,11 +1,9 @@
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/kernel.h>
-#include <linux/kallsyms.h>
 
 static int sym_a(void)
 {
-	char buff[KSYM_SYMBOL_LEN] = {0};
 	unsigned long address;
 	const struct kernel_symbol *sym;
 	printk(KERN_INFO "sym_a\n");

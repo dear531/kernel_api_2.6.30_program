@@ -16,6 +16,7 @@ static int __init module_address_init(void)
 	 * module_refcount();
 	 */
 	struct module *ret = NULL;
+	printk(KERN_INFO "module address function init\n");
 	preempt_disable();
 	ret = __module_address((unsigned long)tmpname_module);
 	preempt_enable();
@@ -23,10 +24,9 @@ static int __init module_address_init(void)
 	printk(KERN_INFO "state :%d\n", ret->state);
 	printk(KERN_INFO "version :%s\n", ret->version);
 	printk(KERN_INFO "size :%d\n", ret->core_size);
-	printk(KERN_INFO "tmpname_module address :%lx, ret->module_core: %lx\n",
+	printk(KERN_INFO "tmpname_module address :%p, ret->module_core: %p\n",
 			tmpname_module, ret->module_core);
 	printk(KERN_INFO "count :%d\n", module_refcount(ret));
-	printk(KERN_INFO "module address function init\n");
 	return 0;
 }
 
