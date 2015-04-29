@@ -23,6 +23,8 @@ static int __init module_address_init(void)
 	printk(KERN_INFO "state :%d\n", ret->state);
 	printk(KERN_INFO "version :%s\n", ret->version);
 	printk(KERN_INFO "size :%d\n", ret->core_size);
+	printk(KERN_INFO "tmpname_module address :%lx, ret->module_core: %lx\n",
+			tmpname_module, ret->module_core);
 	printk(KERN_INFO "count :%d\n", module_refcount(ret));
 	printk(KERN_INFO "module address function init\n");
 	return 0;
