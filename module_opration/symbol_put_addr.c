@@ -12,6 +12,7 @@
 
 extern int fun_addr(void);
 
+const struct kernel_symbol *sym;
 static int __init symbol_put_addr_init(void)
 {
 #if 0
@@ -21,9 +22,9 @@ const struct kernel_symbol *find_symbol(const char *name,
 					bool gplok,
 					bool warn)
 #endif
-	const struct kernel_symbol *sym;
 	struct module *mod;
 	const unsigned long *crc;
+	void *address;
 	printk(KERN_INFO "symbol_put_addr_init\n");
 	sym = find_symbol("fun_addr", &mod, &crc, true, true);
 	if (NULL != sym) {
@@ -32,11 +33,14 @@ const struct kernel_symbol *find_symbol(const char *name,
 		if (NULL != crc) {
 			printk(KERN_INFO "*crc: %lx, crc :%p\n", *crc, crc);
 		}
+		printk(KERN_INFO "befor get count :%d\n",
+				module_refcount(mod));
+		address = __symbol_get(sym->name);
 		printk(KERN_INFO "mod name :%s, mod address :%p\n",
 				mod->name, mod->module_core);
-		printk(KERN_INFO "befor put count :%d\n",
+		printk(KERN_INFO "after get befor put count :%d\n",
 				module_refcount(mod));
-		symbol_put_addr((void*)sym->value);
+		symbol_put_addr(address);
 		printk(KERN_INFO "after put count :%d\n",
 				module_refcount(mod));
 	}
