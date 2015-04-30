@@ -3,7 +3,7 @@ ifneq ($(KERNELRELEASE),)
 		  print_symbol.o symbol_get.o sym_a.o find_module.o find_symbol.o \
 		  module_is_live.o module_put.o module_refcount.o module_state.o \
 		  sprint_symbol.o symbol_put_addr.o sym_fun_addr.o \
-		  try_module_get.o
+		  try_module_get.o use_module.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
