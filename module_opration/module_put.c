@@ -2,10 +2,10 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 
+struct module *mod = NULL;
 static int __init module_put_init(void)
 {
 	char *fmodule = "sym_a";
-	struct module *mod = NULL;
 	printk(KERN_INFO "module_put_init\n");
 	mod = find_module(fmodule);
 	if (NULL != mod) {
@@ -21,6 +21,8 @@ static int __init module_put_init(void)
 static void __exit module_put_exit(void)
 {
 	printk(KERN_INFO "module_put_exit\n");
+	if (NULL != mod)
+		__module_get(mod);
 }
 
 module_init(module_put_init);
