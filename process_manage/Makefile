@@ -1,6 +1,6 @@
 ifneq ($(KERNELRELEASE),)
 	obj-m	:=task_pid_nr_ns.o find_get_pid.o find_pid_ns.o \
-		  find_pid_ns.o
+		  find_pid_ns.o find_task_by_pid_ns.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
