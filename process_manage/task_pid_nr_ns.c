@@ -20,7 +20,7 @@ static int __init task_pid_nr_ns_init(void)
 	result1 = __task_pid_nr_ns(task, PIDTYPE_PID, kpid->numbers[kpid->level].ns);
 	printk(KERN_INFO "the result of the kernel_thread is :%d\n",
 			result);
-	printk(KERN_INFO "pid :%d\n", current->pid);
+	printk(KERN_INFO "current thread pid current->pid :%d\n", current->pid);
 	printk(KERN_INFO "get_pid_result : %d\n",
 			kpid->numbers[kpid->level].nr);
 	printk(KERN_INFO "__task_pid_nr_ns result :%d\n",
