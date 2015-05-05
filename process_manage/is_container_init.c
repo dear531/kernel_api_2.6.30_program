@@ -72,6 +72,7 @@ struct task_struct *find_task_by_pid_type_ns(int type, int nr,
 #if 0
 int is_container_init(struct task_struct *tsk)
 #endif
+	printk(KERN_INFO "pid :%d\n", pid);
 	if (1 == is_container_init(task)) {
 		printk(KERN_INFO "pid is 1\n");
 	} else {
