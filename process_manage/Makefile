@@ -3,7 +3,7 @@ ifneq ($(KERNELRELEASE),)
 		  find_pid_ns.o find_task_by_pid_ns.o find_task_by_pid_type_ns.o \
 		  find_task_by_vpid.o find_vpid.o get_pid.o get_task_mm.o \
 		  is_container_init.o kernel_thread.o mmput.o ns_of_pid.o \
-		  pid_nr.o pid_task.o pid_vnr.o put_pid.o
+		  pid_nr.o pid_task.o pid_vnr.o put_pid.o task_active_pid_ns.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
