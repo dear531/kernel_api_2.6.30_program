@@ -30,24 +30,28 @@ static int __init wake_up_init(void)
 	long time;
 	printk(KERN_INFO "wake_up_init\n");
 #if 0
-pid_t kernel_thread(int (*fn)(void *), void *arg, unsigned long flags)
-#endif
-	pid = kernel_thread(myfunc, NULL, CLONE_KERNEL);
-#if 0
 void init_waitqueue_head(wait_queue_head_t *q)
 #endif
+	printk(KERN_INFO "init_waitqueue_head\n");
 	init_waitqueue_head(&head);
 #if 0
 static inline void init_waitqueue_entry(wait_queue_t *q, struct task_struct *p)
 #endif
+	printk(KERN_INFO "init_waitqueue_entry\n");
 	init_waitqueue_entry(&data, current);
 #if 0
 void add_wait_queue(wait_queue_head_t *q, wait_queue_t *wait)
 #endif
+	printk(KERN_INFO "add_wait_queque\n");
 	add_wait_queue(&head, &data);
+#if 0
+pid_t kernel_thread(int (*fn)(void *), void *arg, unsigned long flags)
+#endif
+	pid = kernel_thread(myfunc, NULL, CLONE_KERNEL);
 #if 0
 long __sched sleep_on_timeout(wait_queue_head_t *q, long timeout)
 #endif
+	printk(KERN_INFO "sleep_on_timeout\n");
 	time = sleep_on_timeout(&head, 100);
 	printk(KERN_INFO "parent pid current->pid :%d in parent\n",
 			current->pid);
