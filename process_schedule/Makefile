@@ -1,5 +1,6 @@
 ifneq ($(KERNELRELEASE),)
-	obj-m	:=wake_up.o wake_up_sync.o wake_up_sync_key.o
+	obj-m	:=wake_up.o wake_up_sync.o wake_up_sync_key.o \
+		  abort_exclusive_wait.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
