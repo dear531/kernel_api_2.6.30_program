@@ -5,7 +5,7 @@ ifneq ($(KERNELRELEASE),)
 		  autoremove_wake_function.o complete.o \
 		  complete_all.o completion_done.o \
 		  current_thread_info.o default_wake_function.o \
-		  do_exit.o finish_wait.o
+		  do_exit.o finish_wait.o init_waitqueue_entry.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
