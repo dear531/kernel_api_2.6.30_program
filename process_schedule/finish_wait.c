@@ -68,7 +68,33 @@ static inline void INIT_LIST_HEAD(struct list_head *list)
 void add_wait_queue(wait_queue_head_t *q, wait_queue_t *wait)
 #endif
 	add_wait_queue(&head, &data1);
-	add_wait_queue(&head, &data2);
+#if 0
+void add_wait_queue(wait_queue_head_t *q, wait_queue_t *wait)
+{
+	unsigned long flags;
+
+	wait->flags &= ~WQ_FLAG_EXCLUSIVE;
+	spin_lock_irqsave(&q->lock, flags);
+	__add_wait_queue(q, wait);
+	spin_unlock_irqrestore(&q->lock, flags);
+}
+prepare_to_wait_exclusive(wait_queue_head_t *q, wait_queue_t *wait, int state)
+{
+	unsigned long flags;
+
+	wait->flags |= WQ_FLAG_EXCLUSIVE;
+	spin_lock_irqsave(&q->lock, flags);
+	if (list_empty(&wait->task_list))
+		__add_wait_queue_tail(q, wait);
+	set_current_state(state);
+	spin_unlock_irqrestore(&q->lock, flags);
+}
+#endif
+	printk(KERN_INFO "befor prepare_to_wait_exclusive state :%ld\n",
+			current->state);
+	prepare_to_wait_exclusive(&head, &data2, 2);
+	printk(KERN_INFO "after prepare_to_wait_exclusive state :%ld\n",
+			current->state);
 #if 0
 list_for_each_entry_safe(pos, n, head, member)
 #endif
@@ -86,6 +112,8 @@ list_for_each_entry_safe(pos, n, head, member)
 void finish_wait(wait_queue_head_t *q, wait_queue_t *wait)
 #endif
 	finish_wait(&head, &data1);
+	printk(KERN_INFO "after finish_wait state :%ld\n",
+			current->state);
 
 	wait_queue_num = 0;
 	list_for_each_entry_safe (curr, next, &head.task_list, task_list) {
