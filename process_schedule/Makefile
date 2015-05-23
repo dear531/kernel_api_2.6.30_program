@@ -11,7 +11,7 @@ ifneq ($(KERNELRELEASE),)
 		  preempt_notifier_unregister.o prepare_to_wait.o \
 		  prepare_to_wait_exclusive.o remote_wait_queue.o \
 		  sched_setscheduler.o set_cpus_allowed_ptr.o \
-		  set_user_nice.o sleep_on.o
+		  set_user_nice.o sleep_on.o sleep_on_timeout.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
