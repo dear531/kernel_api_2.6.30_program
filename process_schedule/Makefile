@@ -9,7 +9,8 @@ ifneq ($(KERNELRELEASE),)
 		  init_waitqueue_head.o interruptible_sleep_on.o \
 		  interruptible_sleep_on_timeout.o preempt_notifier_register.o \
 		  preempt_notifier_unregister.o prepare_to_wait.o \
-		  prepare_to_wait_exclusive.o remote_wait_queue.o
+		  prepare_to_wait_exclusive.o remote_wait_queue.o \
+		  sched_setscheduler.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
