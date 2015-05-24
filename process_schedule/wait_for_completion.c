@@ -68,7 +68,6 @@ void __sched wait_for_completion(struct completion *x)
 	printk(KERN_INFO "befor wait_for_completion comple.done :%d\n",
 			comple.done);
 	wait_for_completion(&comple);
-	try_wait_for_completion();
 	printk(KERN_INFO "after wait_for_completion comple.done :%d\n",
 			comple.done);
 	return 0;
