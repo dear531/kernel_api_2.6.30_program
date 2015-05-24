@@ -12,7 +12,7 @@ ifneq ($(KERNELRELEASE),)
 		  prepare_to_wait_exclusive.o remote_wait_queue.o \
 		  sched_setscheduler.o set_cpus_allowed_ptr.o \
 		  set_user_nice.o sleep_on.o sleep_on_timeout.o \
-		  sub_preempt_count.o task_nice.o
+		  sub_preempt_count.o task_nice.o try_wait_for_completion.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
