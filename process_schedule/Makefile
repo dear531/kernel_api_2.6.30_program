@@ -15,7 +15,7 @@ ifneq ($(KERNELRELEASE),)
 		  sub_preempt_count.o task_nice.o try_wait_for_completion.o \
 		  wait_for_completion.o wait_for_completion_interruptible.o \
 		  wait_for_completion_interruptible_timeout.o \
-		  wake_up_process.o
+		  wake_up_process.o yield.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
