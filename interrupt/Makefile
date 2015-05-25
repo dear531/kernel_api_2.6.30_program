@@ -1,5 +1,5 @@
 ifneq ($(KERNELRELEASE),)
-	obj-m	:=set_irq_handler.o
+	obj-m	:=set_irq_handler.o tasklet_hi_schedule.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
