@@ -1,6 +1,6 @@
 ifneq ($(KERNELRELEASE),)
 	obj-m	:=set_irq_handler.o tasklet_hi_schedule.o \
-		  __tasklet_schedule.o
+		  __tasklet_schedule.o disable_irq_nosync.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
