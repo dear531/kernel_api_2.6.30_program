@@ -4,6 +4,13 @@
 #include <linux/interrupt.h>
 #include <linux/irqnr.h>
 
+#if 0
+# if defined(CONFIG_ALPHA_LEGACY_START_ADDRESS)
+#  define NR_IRQS      (128)           /* max is RAWHIDE/TAKARA */
+# else
+#  define NR_IRQS      (32768 + 16)    /* marvel - 32 pids */
+# endif
+#endif
 unsigned int irq = 11;
 
 #if 0
