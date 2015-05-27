@@ -31,7 +31,9 @@ int request_irq(unsigned int irq,
 		irq_handler_t handler,
 		unsigned long flags, const char *devname, void *dev_id)
 #endif
+	printk(KERN_INFO "after request_irq\n");
 	ret = request_irq(irq, irq_handler_func, IRQF_DISABLED, "A_NEW_DEVICE", NULL);
+	printk(KERN_INFO "befor request_irq\n");
 	printk(KERN_INFO "request_irq result :%d\n", ret);
 	disable_irq_nosync(irq);
 	enable_irq(irq);
