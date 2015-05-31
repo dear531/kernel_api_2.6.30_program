@@ -1,7 +1,7 @@
 ifneq ($(KERNELRELEASE),)
 	obj-m	:=set_irq_handler.o tasklet_hi_schedule.o \
 		  __tasklet_schedule.o disable_irq_nosync.o \
-		  disable_irq_wake.o
+		  disable_irq_wake.o free_irq.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
