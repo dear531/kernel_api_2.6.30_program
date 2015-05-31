@@ -1,7 +1,8 @@
 ifneq ($(KERNELRELEASE),)
 	obj-m	:=set_irq_handler.o tasklet_hi_schedule.o \
 		  __tasklet_schedule.o disable_irq_nosync.o \
-		  disable_irq_wake.o free_irq.o
+		  disable_irq_wake.o free_irq.o \
+		  kstat_irqs_cpu.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
@@ -10,5 +11,5 @@ default:
 	$(MAKE) -C $(KDIR) M=$(PWD)
 clean:
 	-rm -rf *.mod.c .*.cmd *.ko *.o *.mod.c \
-		modules.order Module.symvers
+		modules.order Module.symvers Module.markers
 endif
