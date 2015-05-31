@@ -3,7 +3,8 @@ ifneq ($(KERNELRELEASE),)
 		  __tasklet_schedule.o disable_irq_nosync.o \
 		  disable_irq_wake.o free_irq.o \
 		  kstat_irqs_cpu.o remove_irq.o \
-		  request_irq.o request_threaded_irq.o
+		  request_irq.o request_threaded_irq.o \
+		  set_irq_chained_handler.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
