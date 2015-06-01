@@ -6,7 +6,7 @@ ifneq ($(KERNELRELEASE),)
 		  request_irq.o request_threaded_irq.o \
 		  set_irq_chained_handler.o set_irq_chip.o \
 		  set_irq_chip_data.o set_irq_type.o \
-		  set_irq_wake.o
+		  set_irq_wake.o setup_irq.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
