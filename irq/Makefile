@@ -7,7 +7,7 @@ ifneq ($(KERNELRELEASE),)
 		  set_irq_chained_handler.o set_irq_chip.o \
 		  set_irq_chip_data.o set_irq_type.o \
 		  set_irq_wake.o setup_irq.o \
-		  tasklet_disable.o
+		  tasklet_disable.o tasklet_disable_nosync.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
