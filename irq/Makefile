@@ -8,7 +8,7 @@ ifneq ($(KERNELRELEASE),)
 		  set_irq_chip_data.o set_irq_type.o \
 		  set_irq_wake.o setup_irq.o \
 		  tasklet_disable.o tasklet_disable_nosync.o \
-		  tasklet_kill.o
+		  tasklet_kill.o tasklet_trylock_unlock.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
