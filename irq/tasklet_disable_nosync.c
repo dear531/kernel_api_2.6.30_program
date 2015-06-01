@@ -25,10 +25,12 @@ static inline void tasklet_schedule(struct tasklet_struct *t)
 static inline void tasklet_disable_nosync(struct tasklet_struct *t)
 #endif
 	tasklet_disable_nosync(&tasklet);
+	printk(KERN_INFO "disable tasklet.count :%d\n", tasklet.count);
 #if 0
 static inline void tasklet_enable(struct tasklet_struct *t)
 #endif
 	tasklet_enable(&tasklet);
+	printk(KERN_INFO "enable tasklet.count :%d\n", tasklet.count);
 #if 0
 void tasklet_kill(struct tasklet_struct *t)
 #endif
