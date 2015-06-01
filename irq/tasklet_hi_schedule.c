@@ -40,15 +40,16 @@ void tasklet_init(struct tasklet_struct *t,
 #if 0
 static inline void tasklet_schedule(struct tasklet_struct *t)
 #endif
+#define flag 3
 	tasklet_schedule(&tasklet1);
-#if 1
+#if (flag == 0)
 	tasklet_schedule(&tasklet2);
-#else
-#if 0
-void __tasklet_hi_schedule(struct tasklet_struct *t)
-#endif
+#elif (flag == 1)
 	if (!test_and_set_bit(TASKLET_STATE_SCHED, &tasklet2.state))
 		__tasklet_hi_schedule(&tasklet2);
+#else
+	tasklet_hi_schedule(&tasklet2);
+	printk(KERN_INFO "tasklet_hi_schedule\n");
 #endif
 #if 0
 void tasklet_kill(struct tasklet_struct *t)
