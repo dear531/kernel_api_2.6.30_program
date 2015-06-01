@@ -39,8 +39,15 @@ request_threaded_irq(unsigned int irq, irq_handler_t handler,
 void
 __set_irq_handler(unsigned int irq, irq_flow_handler_t handle, int is_chained,
 		  const char *name)
+static inline void
+set_irq_handler(unsigned int irq, irq_flow_handler_t handle)
 #endif
+#if 0
 	__set_irq_handler(irq, NULL, 1, "A-NEW-DEVICE");
+#else
+	set_irq_handler(irq, NULL);
+#endif
+	disable_irq(irq);
 	enable_irq(irq);
 	printk(KERN_INFO "resulte :%d\n", result);
 	printk(KERN_INFO "out set_irq_handler_init\n");
