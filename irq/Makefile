@@ -5,7 +5,8 @@ ifneq ($(KERNELRELEASE),)
 		  kstat_irqs_cpu.o remove_irq.o \
 		  request_irq.o request_threaded_irq.o \
 		  set_irq_chained_handler.o set_irq_chip.o \
-		  set_irq_chip_data.o set_irq_type.o
+		  set_irq_chip_data.o set_irq_type.o \
+		  set_irq_wake.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
