@@ -1,5 +1,5 @@
 ifneq ($(KERNELRELEASE),)
-	obj-m	:=__get_free_pages.o
+	obj-m	:=__get_free_pages.o __get_vm_area.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
