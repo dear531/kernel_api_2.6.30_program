@@ -1,5 +1,6 @@
 ifneq ($(KERNELRELEASE),)
-	obj-m	:=__get_free_pages.o __get_vm_area.o
+	obj-m	:=__get_free_pages.o __get_vm_area.o \
+		  __krealloc.o struct_print.o refrence.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
