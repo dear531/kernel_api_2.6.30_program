@@ -2,7 +2,7 @@ ifneq ($(KERNELRELEASE),)
 	obj-m	:=__get_free_pages.o __get_vm_area.o \
 		  __krealloc.o struct_print.o refrence.o \
 		  alloc_pages.o alloc_pages_exact.o \
-		  alloc_vm_area.o do_brk.o
+		  alloc_vm_area.o do_brk.o do_mmap.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
