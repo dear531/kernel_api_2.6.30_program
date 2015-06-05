@@ -3,7 +3,7 @@ ifneq ($(KERNELRELEASE),)
 		  __krealloc.o struct_print.o refrence.o \
 		  alloc_pages.o alloc_pages_exact.o \
 		  alloc_vm_area.o do_brk.o do_mmap.o \
-		  do_mmap_pgoff.o
+		  do_mmap_pgoff.o do_munmap.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
