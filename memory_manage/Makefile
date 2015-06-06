@@ -4,7 +4,8 @@ ifneq ($(KERNELRELEASE),)
 		  alloc_pages.o alloc_pages_exact.o \
 		  alloc_vm_area.o do_brk.o do_mmap.o \
 		  do_mmap_pgoff.o do_munmap.o find_vma.o \
-		  find_vma_intersection.o get_unmapped_area.o
+		  find_vma_intersection.o get_unmapped_area.o \
+		  get_user_pages.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
