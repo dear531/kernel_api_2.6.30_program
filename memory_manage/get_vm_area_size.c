@@ -23,6 +23,7 @@ static inline size_t get_vm_area_size(const struct vm_struct *area)
 #endif
 	actual_size = get_vm_area_size(vm);
 	printk(KERN_INFO "actual_size :%d\n", actual_size);
+	printk(KERN_INFO "vm->size :%ld\n", vm->size);
 finish:
 	return ret;
 }
