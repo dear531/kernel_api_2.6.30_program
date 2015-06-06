@@ -6,7 +6,7 @@ ifneq ($(KERNELRELEASE),)
 		  do_mmap_pgoff.o do_munmap.o find_vma.o \
 		  find_vma_intersection.o get_unmapped_area.o \
 		  get_user_pages.o get_user_pages_fast.o \
-		  get_vm_area_size.o
+		  get_vm_area_size.o get_zeroed_page.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
