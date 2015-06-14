@@ -9,7 +9,8 @@ ifneq ($(KERNELRELEASE),)
 		  get_vm_area_size.o get_zeroed_page.o \
 		  kcalloc.o kmalloc.o kmem_cache_alloc.o \
 		  kmemdup.o krealloc.o ksize.o kstrdup.o \
-		  kstrndup.o kzalloc.o memdup_user.o
+		  kstrndup.o kzalloc.o memdup_user.o \
+		  mempool_alloc.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
