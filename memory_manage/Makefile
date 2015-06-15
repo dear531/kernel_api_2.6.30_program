@@ -12,7 +12,7 @@ ifneq ($(KERNELRELEASE),)
 		  kstrndup.o kzalloc.o memdup_user.o \
 		  mempool_alloc.o mempool_alloc_pages.o \
 		  mempool_alloc_slab.o mempool_create.o \
-		  mempool_kmalloc.o
+		  mempool_kmalloc.o mempool_kzalloc.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
