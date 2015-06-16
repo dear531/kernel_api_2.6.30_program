@@ -13,7 +13,8 @@ ifneq ($(KERNELRELEASE),)
 		  mempool_alloc.o mempool_alloc_pages.o \
 		  mempool_alloc_slab.o mempool_create.o \
 		  mempool_kmalloc.o mempool_kzalloc.o \
-		  mempool_resize.o nr_free_buffer_pages.o
+		  mempool_resize.o nr_free_buffer_pages.o \
+		  page_address.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
