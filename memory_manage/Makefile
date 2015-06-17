@@ -14,7 +14,8 @@ ifneq ($(KERNELRELEASE),)
 		  mempool_alloc_slab.o mempool_create.o \
 		  mempool_kmalloc.o mempool_kzalloc.o \
 		  mempool_resize.o nr_free_buffer_pages.o \
-		  page_address.o page_cache_get.o
+		  page_address.o page_cache_get.o \
+		  page_zone.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
