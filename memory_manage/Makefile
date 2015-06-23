@@ -18,7 +18,7 @@ ifneq ($(KERNELRELEASE),)
 		  page_zone.o probe_kernel_address.o \
 		  probe_kernel_read.o probe_kernel_write.o \
 		  vma_pages.o vmalloc.o vmalloc_to_page.o \
-		  vmalloc_to_pfn.o
+		  vmalloc_to_pfn.o vmalloc_user.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
