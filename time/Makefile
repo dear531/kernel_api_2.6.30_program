@@ -1,5 +1,5 @@
 ifneq ($(KERNELRELEASE),)
-	obj-m	:=__round_jiffies.o
+	obj-m	:=__round_jiffies.o __round_jiffies_relative.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
