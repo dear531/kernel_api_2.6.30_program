@@ -2,7 +2,8 @@ ifneq ($(KERNELRELEASE),)
 	obj-m	:=__round_jiffies.o __round_jiffies_relative.o \
 		  __round_jiffies_up.o __round_jiffies_up_relative.o \
 		  current_kernel_time.o timer.o do_gettimeofday.o \
-		  get_seconds.o getnstimeofday.o
+		  get_seconds.o getnstimeofday.o \
+		  init_timer_deferrable.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
