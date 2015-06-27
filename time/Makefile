@@ -4,7 +4,7 @@ ifneq ($(KERNELRELEASE),)
 		  current_kernel_time.o timer.o do_gettimeofday.o \
 		  get_seconds.o getnstimeofday.o \
 		  init_timer_deferrable.o init_timer_deferrable_key.o \
-		  init_timer_key.o mktime.o mktime.o
+		  init_timer_key.o mktime.o mktime.o mod_timer.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
