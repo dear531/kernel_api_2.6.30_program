@@ -6,7 +6,8 @@ ifneq ($(KERNELRELEASE),)
 		  init_timer_deferrable.o init_timer_deferrable_key.o \
 		  init_timer_key.o mktime.o mktime.o mod_timer.o \
 		  ns_to_timespec.o ns_to_timeval.o \
-		  set_normalized_timespec.o timespec_compare.o
+		  set_normalized_timespec.o timespec_compare.o \
+		  timespec_sub.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
