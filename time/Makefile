@@ -5,7 +5,7 @@ ifneq ($(KERNELRELEASE),)
 		  get_seconds.o getnstimeofday.o \
 		  init_timer_deferrable.o init_timer_deferrable_key.o \
 		  init_timer_key.o mktime.o mktime.o mod_timer.o \
-		  ns_to_timespec.o
+		  ns_to_timespec.o ns_to_timeval.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
