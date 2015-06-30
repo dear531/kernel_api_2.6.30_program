@@ -9,16 +9,20 @@ static int __init atomic_init(void)
 #if 0
 #define atomic_set(v,i)		((v)->counter = (i))
 #endif
-	atomic_set(&v, -5);
+	atomic_set(&v, 6);
 #if 0
 #define atomic_read(v)		((v)->counter + 0)
 #endif
 	printk(KERN_INFO "v :%d\n", atomic_read(&v));
 #if 0
-#define atomic_add_negative(a, v) (atomic_add_return((a), (v)) < 0)
+#define atomic_sub_and_test(i,v) (atomic_sub_return((i), (v)) == 0)
 #endif
-	ret = atomic_add_negative(1, &v);
-	printk(KERN_INFO "ret :%d, v :%d\n", ret, atomic_read(&v));
+	while (!(ret = atomic_sub_and_test(2 ,&v))) {
+		printk(KERN_INFO "ret :%d ,v :%d\n",
+				ret, atomic_read(&v));
+	}
+	printk(KERN_INFO "ret :%d ,v :%d\n",
+			ret, atomic_read(&v));
 	return 0;
 }
 

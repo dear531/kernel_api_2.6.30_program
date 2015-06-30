@@ -21,13 +21,13 @@ static int __init atomic_init(void)
 	new = 5;
 	ret = atomic_cmpxchg(&v, old, new);
 	printk(KERN_INFO "old :%d, new :%d ,ret :%d, v :%d\n",
-			old, new, atomic_read(&v));
+			old, new, ret, atomic_read(&v));
 
 	old = 3;
 	new = 2;
 	ret = atomic_cmpxchg(&v, 3, 2);
 	printk(KERN_INFO "old :%d, new :%d ,ret :%d, v :%d\n",
-			old, new, atomic_read(&v));
+			old, new, ret, atomic_read(&v));
 	return 0;
 }
 
