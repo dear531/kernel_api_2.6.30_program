@@ -3,7 +3,7 @@ ifneq ($(KERNELRELEASE),)
 		  atomic_add_return.o atomic_add_unless.o \
 		  atomic_cmpxchg.o atomic_dec.o \
 		  atomic_dec_and_test.o atomic_inc_and_test.o \
-		  atomic_sub_and_test.o
+		  atomic_sub_and_test.o atomic_sub_return.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
