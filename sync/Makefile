@@ -1,5 +1,5 @@
 ifneq ($(KERNELRELEASE),)
-	obj-m	:=atomic_add.o
+	obj-m	:=atomic_add.o atomic_add_negative.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
