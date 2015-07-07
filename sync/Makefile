@@ -6,7 +6,7 @@ ifneq ($(KERNELRELEASE),)
 		  atomic_sub_and_test.o atomic_sub_return.o \
 		  down.o down_interruptible.o down_read.o \
 		  down_read_trylock.o down_timeout.o \
-		  down_write_trylock.o
+		  down_write_trylock.o downgrade_write.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
