@@ -7,7 +7,8 @@ ifneq ($(KERNELRELEASE),)
 		  down.o down_interruptible.o down_read.o \
 		  down_read_trylock.o down_timeout.o \
 		  down_write_trylock.o downgrade_write.o \
-		  read_seqbegin.o rwlock.o spin_lock.o
+		  read_seqbegin.o rwlock.o spin_lock.o \
+		  spin_lock_bh.o
 else
 	PWD	:=$(shell pwd)
 	KVER	:=$(shell uname -r)
